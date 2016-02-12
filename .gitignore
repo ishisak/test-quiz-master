@@ -15,3 +15,9 @@
 /log/*.log
 /tmp
 .idea
+
+rails/.bundle
+rails/db/*
+rails/log/*
+rails/tmp
+rails/vendor/bundle/
