@@ -1,0 +1,33 @@
+<div class="form-group">
+  <%= form_for(@question) do |f| %>
+    <% if @question.errors.present? %>
+      <div class="alert alert-danger">
+        <% @question.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </div>
+    <% end %>
+    <div>question</div>
+    <%= f.text_field :question, :class => 'form-control' %>
+    <br>
+    <div>Question Type</div>
+    <%= f.select :quiz_type, options_for_select({"Sentence quiz" => 0, "YES/NO quiz" => 1}) , {}, {:class =>'form-control'} %>
+    <br>
+    <div>answer</div>
+    <div id="ans_sent">
+      <%= f.text_field :answer, :class => 'form-control' %></br>
+    </div>
+    <div  id="ans_radio">
+      <label class="checkbox-inline">
+        <%= f.radio_button :answer, 1, {:required => true} %> YES
+      </label>
+      <label class="checkbox-inline">
+        <%= f.radio_button :answer, 0, {:required => true} %> NO
+      </label>
+    </div>
+    <div class="actions">
+      <%= f.submit "submit", :class => 'btn btn-primary' %>
+    </div>
+
+  <% end %>
+</div>
