@@ -6,7 +6,7 @@ class Question < ActiveRecord::Base
 
 
   def is_correct?(submission)
-    normalize(submission) == normalize(answer)
+    normalize(answer) == normalize(submission)
   end
 
   private
