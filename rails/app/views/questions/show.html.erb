@@ -3,19 +3,19 @@
   <div class='well'>
     <p><%= @question.question %></p>
     <%= form_for(:answer, url: answer_question_path(@question)) do |f| %>
-    <div class='form-group'>
+    <div>
         <% if @question.quiz_type == 1 %>
-          <label class="checkbox-inline">
+          <label class="checkbox-inline form-group">
             <%= f.radio_button :answer, 1, :name => 'answer' %> YES
           </label>
-          <label class="checkbox-inline">
+          <label class="checkbox-inline form-group">
             <%= f.radio_button :answer, 0, :name => 'answer' %> NO
           </label>
         <% else %>
-          <%= f.text_field :answer, :name => 'answer', :class => 'form-control' %></br>
+          <%= f.text_field :answer, :name => 'answer', :class => 'form-control' %>
         <% end %>
         <div class="actions">
-          <%= f.submit "Submit answer", :class => 'btn btn-default' %>
+          <%= f.submit "Submit answer", :class => 'btn btn-default', :style => 'margin-top:20px;'%>
         </div>
     </div>
     <% end %>

@@ -13,11 +13,11 @@
     <div>Question Type</div>
     <%= f.select :quiz_type, options_for_select({"Sentence quiz" => 0, "YES/NO quiz" => 1}) , {}, {:class =>'form-control'} %>
     <br>
-    <div>answer</div>
+    <div>Answer</div>
     <div id="ans_sent">
       <%= f.text_field :answer, :class => 'form-control' %></br>
     </div>
-    <div id="ans_radio">
+    <div id="ans_radio" class="form-group">
       <label class="checkbox-inline">
         <%= f.radio_button :answer, 1 %> YES
       </label>
