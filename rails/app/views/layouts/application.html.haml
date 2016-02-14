@@ -13,5 +13,9 @@
       .container
         .alert.alert-info
           = flash[:notice]
+    - if flash[:alert].present?
+      .container
+        .alert.alert-danger
+          = flash[:alert]
 
     = yield

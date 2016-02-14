@@ -27,7 +27,13 @@ class QuestionsController < ApplicationController
   end
 
   def answer
-    # TODO
+    find_question
+    if @question.is_correct?(params[:answer])
+      redirect_to root_path, notice: 'Correct !!'
+    else
+      flash.now[:alert] = "Wrong Answer. Please try again"
+      render :show
+    end
   end
 
   private
@@ -37,6 +43,6 @@ class QuestionsController < ApplicationController
   end
 
   def question_params
-    params.require(:question).permit(:question, :answer)
+    params.require(:question).permit(:question, :answer, :quiz_type)
   end
 end

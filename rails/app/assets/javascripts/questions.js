@@ -1,6 +1,5 @@
 $(function (){
   $("#ans_radio").hide();
-
   $("#question_quiz_type").bind("change", function(){
     if ($("#question_quiz_type").val() === '1') {
       $("#ans_radio").show();

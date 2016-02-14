@@ -17,13 +17,14 @@
     <div id="ans_sent">
       <%= f.text_field :answer, :class => 'form-control' %></br>
     </div>
-    <div  id="ans_radio">
+    <div id="ans_radio">
       <label class="checkbox-inline">
-        <%= f.radio_button :answer, 1, {:required => true} %> YES
+        <%= f.radio_button :answer, 1 %> YES
       </label>
       <label class="checkbox-inline">
-        <%= f.radio_button :answer, 0, {:required => true} %> NO
+        <%= f.radio_button :answer, 0 %> NO
       </label>
+     <br>
     </div>
     <div class="actions">
       <%= f.submit "submit", :class => 'btn btn-primary' %>

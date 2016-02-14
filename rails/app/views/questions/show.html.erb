@@ -1,0 +1,23 @@
+<div class='container'>
+  <h1>Question time...</h1>
+  <div class='well'>
+    <p><%= @question.question %></p>
+    <%= form_for(:answer, url: answer_question_path(@question)) do |f| %>
+    <div class='form-group'>
+        <% if @question.quiz_type == 1 %>
+          <label class="checkbox-inline">
+            <%= f.radio_button :answer, 1, :name => 'answer' %> YES
+          </label>
+          <label class="checkbox-inline">
+            <%= f.radio_button :answer, 0, :name => 'answer' %> NO
+          </label>
+        <% else %>
+          <%= f.text_field :answer, :name => 'answer', :class => 'form-control' %></br>
+        <% end %>
+        <div class="actions">
+          <%= f.submit "Submit answer", :class => 'btn btn-default' %>
+        </div>
+    </div>
+    <% end %>
+  </div>
+</div>
